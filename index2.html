@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing Conversational AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            frappe: {
+              base: '#303446',
+              mantle: '#292c3c',
+              crust: '#232634',
+              text: '#c6d0f5',
+              subtext1: '#b5bfe2',
+              surface0: '#414559',
+              surface1: '#51576d',
+              surface2: '#626880',
+              blue: '#8caaee',
+              lavender: '#babbf1',
+              pink: '#f4b8e4',
+              green: '#a6d189',
+              teal: '#81c8be',
+              yellow: '#e5c890'
+            },
+            latte: {
+              base: '#eff1f5',
+              mantle: '#e6e9ef',
+              crust: '#dce0e8',
+              text: '#1c1c1e',
+              subtext1: '#2c2c2e',
+              surface0: '#ccd0da',
+              surface1: '#bcc0cc',
+              surface2: '#acb0be',
+              blue: '#1e66f5',
+              lavender: '#7287fd',
+              pink: '#ea76cb',
+              green: '#40a02b',
+              teal: '#179299',
+              yellow: '#df8e1d'
+            }
+          },
+          borderRadius: {
+            xl2: '1.25rem'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body
+  class="min-h-screen bg-latte-base text-latte-text dark:bg-frappe-base dark:text-frappe-text transition-colors duration-300 font-sans">
+
+  <!-- Navigation -->
+  <nav
+    class="fixed top-0 left-0 w-full bg-latte-mantle/80 dark:bg-frappe-mantle/80 backdrop-blur-sm border-b border-latte-surface1 dark:border-frappe-surface1 z-50 transition-colors duration-300">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#top"
+        class="flex items-center gap-3 text-latte-lavender dark:text-frappe-lavender font-semibold text-lg">
+        <img src="images/logo.png" alt="Logo" class="w-8 h-8" />
+        <span>Testing Conversational AI</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme toggle -->
+        <button id="theme-toggle" type="button"
+          class="flex items-center justify-center w-9 h-9 rounded-full border border-latte-surface1 dark:border-frappe-surface1 text-latte-subtext1 dark:text-frappe-subtext1 hover:bg-latte-surface0 dark:hover:bg-frappe-surface0 transition-colors duration-300"
+          aria-label="Toggle color theme">
+          <span id="theme-toggle-icon">🌙</span>
+        </button>
+
+        <!-- Mobile burger -->
+        <button id="burger" type="button"
+          class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-latte-surface1 dark:border-frappe-surface1 text-latte-lavender dark:text-frappe-lavender transition-colors duration-300"
+          aria-label="Toggle navigation">
+          <span
+            class="burger-line h-0.5 w-full rounded bg-latte-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
+          <span
+            class="burger-line h-0.5 w-full rounded bg-latte-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
+          <span
+            class="burger-line h-0.5 w-full rounded bg-latte-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
+        </button>
+
+        <!-- Desktop menu -->
+        <div class="hidden sm:flex items-center gap-6">
+          <a href="#services"
+            class="text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Services</a>
+          <!-- <a href="#reporting"
+            class="text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Reporting</a> -->
+          <a href="#contact"
+            class="text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu"
+      class="hidden flex-col bg-latte-mantle dark:bg-frappe-mantle border-t border-latte-surface1 dark:border-frappe-surface1 sm:hidden transition-all duration-300 origin-top">
+      <a href="#services"
+        class="px-4 py-3 text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Services</a>
+      <a href="#reporting"
+        class="px-4 py-3 text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Reporting</a>
+      <a href="#contact"
+        class="px-4 py-3 text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const html = document.documentElement;
+      const burger = document.getElementById('burger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const burgerLines = document.querySelectorAll('.burger-line');
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-toggle-icon');
+
+      // --- Theme init (Tailwind dark mode) ---
+      const storedTheme = localStorage.getItem('theme');
+
+      if (storedTheme === 'light') {
+        html.classList.remove('dark');
+        themeIcon.textContent = '☀️';
+      } else if (storedTheme === 'dark') {
+        html.classList.add('dark');
+        themeIcon.textContent = '🌙';
+      } else {
+        // fallback: keep html.class="dark" default
+        themeIcon.textContent = html.classList.contains('dark') ? '🌙' : '☀️';
+      }
+
+      function setTheme(mode) {
+        if (mode === 'light') {
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          themeIcon.textContent = '☀️';
+        } else {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          themeIcon.textContent = '🌙';
+        }
+      }
+
+      themeToggle.addEventListener('click', () => {
+        const isDark = html.classList.contains('dark');
+        setTheme(isDark ? 'light' : 'dark');
+      });
+
+      // --- Burger toggle + animation ---
+      burger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+
+        // Animate burger into X
+        burgerLines[0].classList.toggle('translate-y-2');
+        burgerLines[0].classList.toggle('rotate-45');
+
+        burgerLines[1].classList.toggle('opacity-0');
+
+        burgerLines[2].classList.toggle('-translate-y-2');
+        burgerLines[2].classList.toggle('-rotate-45');
+      });
+    });
+  </script>
+
+  <!-- Hero -->
+  <section id="top"
+    class="pt-40 pb-24 text-center bg-gradient-to-br from-latte-mantle to-latte-crust dark:from-frappe-mantle dark:to-frappe-crust transition-colors duration-300">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-latte-lavender dark:text-frappe-lavender">
+        Testing Conversational AI
+      </h1>
+      <p class="mt-4 text-latte-subtext1 dark:text-frappe-subtext1 text-lg">
+        Your conversational AI app should be helpful, stable, compliant, and consistently on-brand — not unpredictable
+        or fragile. I help teams validate behaviour, fix reasoning gaps, improve tone, and ensure that the chatbot
+        serves <em>all</em> users well.
+      </p>
+      <img src="images/conversational-ai-testing1.png" alt="Conversational AI hero"
+        class="mx-auto mt-8 rounded-xl2 shadow-lg max-w-md" />
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-latte-mantle/40 dark:bg-frappe-mantle/40 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-latte-surface0 dark:bg-frappe-surface0 p-8 rounded-xl2 shadow-md transition-colors duration-300">
+        <h2 class="text-2xl font-bold text-latte-lavender dark:text-frappe-lavender mb-6">Services</h2>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 leading-relaxed text-latte-text dark:text-frappe-text">
+          <div>
+            <h3 class="text-latte-blue dark:text-frappe-blue font-semibold text-lg mb-3">Automation & Reliability
+              Testing</h3>
+            <p>
+              I rigorously test your AI system’s reasoning, memory stability, and overall resilience by simulating
+              realistic, multi‑turn conversations. I also identify hallucinations, contradictions, and performance
+              bottlenecks, ensuring the system remains reliable even under heavy load. Every workflow is validated
+              end‑to‑end, and automated checks run continuously alongside your deployments.
+            </p>
+          </div>
+
+
+          <div>
+            <h3 class="text-latte-pink dark:text-frappe-pink font-semibold text-lg mb-3">Conversational Behaviour
+              Analysis</h3>
+            <p>
+              I analyse how your chatbot behaves across a wide variety of user journeys, uncovering edge cases and
+              patterns that could lead to confusion or drift. This includes examining long-running dialogue consistency,
+              enforcing guardrails, and ensuring the bot maintains a coherent tone and behaviour throughout
+              conversations.
+            </p>
+          </div>
+
+
+          <div>
+            <h3 class="text-latte-green dark:text-frappe-green font-semibold text-lg mb-3">AI Accessibility &
+              Neurodivergent UX</h3>
+            <p>
+              I evaluate the clarity, cognitive load, and predictability of your AI’s communication style, ensuring the
+              experience is accessible for neurodivergent users and people who benefit from structured, low‑ambiguity
+              messaging. This includes identifying overwhelming patterns, reducing conversational friction, and
+              improving message structure for inclusivity.
+            </p>
+          </div>
+
+
+          <div>
+            <h3 class="text-latte-lavender dark:text-frappe-lavender font-semibold text-lg mb-3">Personality & Tone
+              Governance</h3>
+            <p>
+              I help define, refine, and maintain a consistent voice for your AI. This includes managing confidence
+              levels, reducing unnecessary apologies, aligning responses with brand tone, and preventing emotional or
+              stylistic drift. The goal is a reliable, human‑friendly personality that remains stable across all
+              interactions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reporting -->
+  <!-- <section id="reporting" class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-latte-surface0 dark:bg-frappe-surface0 p-8 rounded-xl2 shadow-md transition-colors duration-300">
+        <h2 class="text-2xl font-bold text-latte-lavender dark:text-frAppe-lavender mb-4">
+          Reporting &amp; Visual Outputs
+        </h2>
+        <p class="mb-4">
+          Clear reporting you can hand directly to stakeholders.
+        </p>
+        <ul class="list-disc ml-6 space-y-1">
+          <li><strong>Allure summary report</strong></li>
+          <li><strong>API latency &amp; uptime graph</strong></li>
+          <li><strong>Conversation transcript analysis</strong></li>
+          <li><strong>Automation dashboard / CI reporting view</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-latte-mantle/40 dark:bg-frappe-mantle/40 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-latte-surface0 dark:bg-frappe-surface0 p-8 rounded-xl2 shadow-md transition-colors duration-300">
+        <h2 class="text-2xl font-bold text-latte-lavender dark:text-frappe-lavender mb-4">Contact</h2>
+        <p>If you'd like to improve your chatbot’s reliability, tone, or behaviour, feel free to reach out:</p>
+
+
+        <div class="mt-6 space-y-4 text-lg">
+          <p class="flex items-center gap-3">
+            <!-- LinkedIn icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-latte-blue dark:text-frappe-blue"
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-10h3v1.569c1.396-2.586 7-2.777 7 2.476v5.955z" />
+            </svg>
+            <a href="https://linkedin.com/in/jaffamonkey" target="_blank" class="underline hover:opacity-80">LinkedIn
+              Profile</a>
+          </p>
+          <p class="flex items-center gap-3">
+            <!-- Calendly icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-latte-green dark:text-frappe-green" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <a href="https://calendly.com/jaffamonkeyltd/intro-call" target="_blank" class="underline hover:opacity-80">Book a call
+              on Calendly</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    class="text-center py-8 text-latte-subtext1 dark:text-frappe-subtext1 border-t border-latte-surface1 dark:border-frappe-surface1 transition-colors duration-300">
+    © copyright 2025 jaffamonkey Ltd (03528410)
+  </footer>
+
+</body>
+
+</html>
