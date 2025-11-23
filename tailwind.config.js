@@ -1,8 +1,9 @@
 module.exports = {
   darkMode: 'class',
   safelist: [
-    { pattern: /(bg|text|border)-(macchiato|frappe)-(.*)/ },
-    { pattern: /dark:(.*)/ },
+    { pattern: /(bg|text|border)-(latte|frappe|macchiato)-(.*)/ },
+    { pattern: /dark:/ },
+    { pattern: /dark:(bg|text|border)-(latte|frappe|macchiato)-(.*)/ },
   ],
   content: ["./*.html", "./**/*.html", "./**/*.js"],
   theme: {
