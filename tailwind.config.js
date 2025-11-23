@@ -1,7 +1,3 @@
-safelist: [
-  { pattern: /(bg|text|border)-(macchiato|frappe)-(.*)/ },
-  { pattern: /dark:(.*)/ },
-]
 module.exports = {
   darkMode: 'class',
   safelist: [
