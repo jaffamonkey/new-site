@@ -16,10 +16,11 @@
 
   <!-- Navigation -->
   <nav
-    class="fixed top-0 left-0 w-full bg-latte-mantle/80 dark:bg-frappe-mantle/80 backdrop-blur-sm border-b border-latte-surface1 dark:border-frappe-surface1 z-50 transition-colors duration-300">
+    class="fixed top-0 left-0 w-full bg-macchiato-mantle/80 dark:bg-frappe-mantle/80 backdrop-blur-sm border-b border-macchiato-surface1 dark:border-frappe-surface1 z-50">
     <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="https://jaffamonkey.sbs"
-        class="flex items-center gap-3 text-latte-lavender dark:text-frappe-lavender font-semibold text-lg">
+
+      <a href="index.html"
+        class="flex items-center gap-3 text-macchiato-lavender dark:text-frappe-lavender font-semibold text-lg">
         <img src="images/logo.png" alt="Logo" class="w-8 h-8" />
         <span>Testing</span>
       </a>
@@ -27,44 +28,39 @@
       <div class="flex items-center gap-3">
         <!-- Theme toggle -->
         <button id="theme-toggle" type="button"
-          class="flex items-center justify-center w-9 h-9 rounded-full border border-latte-surface1 dark:border-frappe-surface1 text-latte-subtext1 dark:text-frappe-subtext1 hover:bg-latte-surface0 dark:hover:bg-frappe-surface0 transition-colors duration-300"
-          aria-label="Toggle color theme">
+          class="flex items-center justify-center w-9 h-9 rounded-full border border-macchiato-surface1 dark:border-frappe-surface1 text-macchiato-subtext1 dark:text-frappe-subtext1 hover:bg-macchiato-surface0 dark:hover:bg-frappe-surface0 transition-colors duration-300">
           <span id="theme-toggle-icon">🌙</span>
         </button>
 
-        <!-- Mobile burger -->
+        <!-- Burger -->
         <button id="burger" type="button"
-          class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-latte-surface1 dark:border-frappe-surface1 text-latte-lavender dark:text-frappe-lavender transition-colors duration-300"
-          aria-label="Toggle navigation">
+          class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-macchiato-surface1 dark:border-frappe-surface1 text-macchiato-lavender dark:text-frappe-lavender transition-colors duration-300">
           <span
-            class="burger-line h-0.5 w-full rounded bg-latte-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
+            class="burger-line h-0.5 w-full rounded bg-macchiato-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
           <span
-            class="burger-line h-0.5 w-full rounded bg-latte-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
+            class="burger-line h-0.5 w-full rounded bg-macchiato-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
           <span
-            class="burger-line h-0.5 w-full rounded bg-latte-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
+            class="burger-line h-0.5 w-full rounded bg-macchiato-lavender dark:bg-frappe-lavender transition-all duration-300"></span>
         </button>
 
         <!-- Desktop menu -->
         <div class="hidden sm:flex items-center gap-6">
-          <a href="https://jaffamonkey.sbs"
-            class="text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Home</a>
-          <a href="accessibility.html"
-            class="text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Accessibility</a>
-          <a href="#contact"
-            class="text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Contact</a>
+          <a href="about.html" class="hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
+          <a href="index.html#services"
+            class="hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Services</a>
+          <a href="index.html#contact" class="hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
         </div>
       </div>
     </div>
 
-    <!-- Mobile dropdown menu -->
+    <!-- Mobile dropdown -->
     <div id="mobile-menu"
-      class="hidden flex-col bg-latte-mantle dark:bg-frappe-mantle border-t border-latte-surface1 dark:border-frappe-surface1 sm:hidden transition-all duration-300 origin-top">
-      <a href="https://jaffamonkey.sbs/"
-        class="px-4 py-3 text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Home</a>
-      <a href="accessibility.html"
-        class="px-4 py-3 text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Accessibility</a>
-      <a href="#contact"
-        class="px-4 py-3 text-latte-subtext1 dark:text-frappe-subtext1 hover:text-latte-lavender dark:hover:text-frappe-lavender transition-colors duration-300">Contact</a>
+      class="hidden flex-col bg-macchiato-mantle dark:bg-frappe-mantle border-t border-macchiato-surface1 dark:border-frappe-surface1 sm:hidden transition-all duration-300">
+      <a href="about.html" class="px-4 py-3 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
+      <a href="index.html#services"
+        class="px-4 py-3 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Services</a>
+      <a href="index.html#contact"
+        class="px-4 py-3 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
     </div>
   </nav>
 
@@ -238,7 +234,8 @@
               <path
                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-10h3v1.569c1.396-2.586 7-2.777 7 2.476v5.955z" />
             </svg>
-            <a href="https://www.linkedin.com/in/jaffamonkey/" target="_blank" class="underline hover:opacity-80">LinkedIn
+            <a href="https://www.linkedin.com/in/jaffamonkey/" target="_blank"
+              class="underline hover:opacity-80">LinkedIn
               Profile</a>
           </p>
           <p class="flex items-center gap-3">
