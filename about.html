@@ -14,49 +14,68 @@
 
     <!-- Navigation -->
     <nav
-        class="fixed top-0 left-0 w-full bg-macchiato-mantle/80 dark:bg-frappe-mantle/80 backdrop-blur-sm border-b border-macchiato-surface1 dark:border-frappe-surface1 z-50">
+        class="fixed top-0 left-0 w-full bg-macchiato-mantle/80 dark:bg-frappe-mantle/80 backdrop-blur-sm border-b border-macchiato-surface1 dark:border-frappe-surface1 z-50 transition-colors duration-300">
         <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
 
+            <!-- Logo -->
             <a href="index.html"
                 class="flex items-center gap-3 text-macchiato-lavender dark:text-frappe-lavender font-semibold text-lg">
                 <img src="images/logo.png" alt="Logo" class="w-8 h-8" />
-                <span>Testing</span>
+                <span>AI Testing</span>
             </a>
 
             <div class="flex items-center gap-3">
+
                 <!-- Theme toggle -->
                 <button id="theme-toggle" type="button"
-                    class="flex items-center justify-center w-9 h-9 rounded-full border border-macchiato-surface1 dark:border-frappe-surface1 text-macchiato-subtext1 dark:text-frappe-subtext1 hover:bg-macchiato-surface0 dark:hover:bg-frappe-surface0 transition-colors duration-300">
+                    class="flex items-center justify-center w-9 h-9 rounded-full border border-macchiato-surface1 dark:border-frappe-surface1 text-macchiato-subtext1 dark:text-frappe-subtext1 hover:bg-macchiato-surface0 dark:hover:bg-frappe-surface0 transition-colors duration-300"
+                    aria-label="Toggle color theme">
                     <span id="theme-toggle-icon">🌙</span>
                 </button>
 
-                <!-- Burger -->
+                <!-- Mobile burger -->
                 <button id="burger" type="button"
-                    class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-macchiato-surface1 dark:border-frappe-surface1 text-macchiato-lavender dark:text-frappe-lavender transition-colors duration-300">
-                    <span class="burger-line h-0.5 w-full rounded bg-macchiato-subtext1 dark:bg-frappe-lavender transition-all duration-300"></span>
-                    <span class="burger-line h-0.5 w-full rounded bg-macchiato-subtext1 dark:bg-frappe-lavender transition-all duration-300"></span>
-                    <span class="burger-line h-0.5 w-full rounded bg-macchiato-subtext1 dark:bg-frappe-lavender transition-all duration-300"></span>
+                    class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-macchiato-surface1 dark:border-frappe-surface1 transition-colors duration-300"
+                    aria-label="Toggle navigation">
+
+                    <!-- 3 visible lines, high contrast in light mode -->
+                    <span class="burger-line h-0.5 w-full rounded
+          bg-macchiato-text dark:bg-frappe-lavender
+          shadow-[0_0_2px_rgba(0,0,0,0.25)]
+          transition-all duration-300"></span>
+
+                    <span class="burger-line h-0.5 w-full rounded
+          bg-macchiato-text dark:bg-frappe-lavender
+          shadow-[0_0_2px_rgba(0,0,0,0.25)]
+          transition-all duration-300"></span>
+
+                    <span class="burger-line h-0.5 w-full rounded
+          bg-macchiato-text dark:bg-frappe-lavender
+          shadow-[0_0_2px_rgba(0,0,0,0.25)]
+          transition-all duration-300"></span>
                 </button>
 
                 <!-- Desktop menu -->
                 <div class="hidden sm:flex items-center gap-6">
-                    <a href="about.html" class="hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
+                    <a href="about.html"
+                        class="text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
                     <a href="accessibility.html"
-                        class="hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Accessibility</a>
-                    <a href="#contact" class="hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
+                        class="text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Accessibility</a>
+                    <a href="#contact"
+                        class="text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile dropdown -->
+        <!-- Mobile dropdown menu -->
         <div id="mobile-menu"
-            class="hidden flex-col bg-macchiato-mantle dark:bg-frappe-mantle border-t border-macchiato-surface1 dark:border-frappe-surface1 sm:hidden transition-all duration-300">
+            class="hidden flex-col bg-macchiato-mantle dark:bg-frappe-mantle border-t border-macchiato-surface1 dark:border-frappe-surface1 sm:hidden transition-all duration-300 origin-top">
             <a href="about.html"
-                class="px-4 py-3 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
+                class="px-4 py-3 text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
             <a href="accessibility.html"
-                class="px-4 py-3 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Accessibility</a>
-            <a href="index.html#contact"
-                class="px-4 py-3 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
+                class="px-4 py-3 text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Accessibility</a>
+            <a href="#contact"
+                class="px-4 py-3 text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
         </div>
     </nav>
 
