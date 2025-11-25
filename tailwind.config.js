@@ -3,10 +3,10 @@ module.exports = {
 
   safelist: [
     // Allow bg/text/border classes for Latte, Frappe, Macchiato (light mode)
-    { pattern: /(bg|text|border)-(latte|frappe|macchiato)-(.*)/ },
+    { pattern: /(bg|text|border)-(latte|frappe)-(.*)/ },
 
     // Allow the same classes in dark mode
-    { pattern: /dark:(bg|text|border)-(latte|frappe|macchiato)-(.*)/ }
+    { pattern: /dark:(bg|text|border)-(latte|frappe)-(.*)/ }
   ],
 
   content: ["./*.html", "./**/*.html", "./**/*.js"],
