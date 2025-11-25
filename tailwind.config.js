@@ -23,15 +23,11 @@ module.exports = {
         },
 
         latte: {
-          base: "#1e1e2e", mantle: "#181825", crust: "#11111b", text: "#cdd6f4",
-          subtext1: "#bac2de", subtext0: "#a6adc8",
-          overlay2: "#9399b2", overlay1: "#7f849c", overlay0: "#6c7086",
-          surface2: "#585b70", surface1: "#45475a", surface0: "#313244",
-          lavender: "#b4befe", blue: "#89b4fa", sapphire: "#74c7ec",
-          sky: "#89dceb", teal: "#94e2d5", green: "#a6e3a1",
-          yellow: "#f9e2af", peach: "#fab387", maroon: "#eba0ac",
-          red: "#f38ba8", mauve: "#cba6f7", pink: "#f5c2e7",
-          flamingo: "#f2cdcd", rosewater: "#f5e0dc"
+          base: '#303446', mantle: '#292c3c', crust: '#232634',
+          text: '#c6d0f5', subtext1: '#b5bfe2',
+          surface0: '#414559', surface1: '#51576d', surface2: '#626880',
+          blue: '#8caaee', lavender: '#babbf1', pink: '#f4b8e4',
+          green: '#a6d189', teal: '#81c8be', yellow: '#e5c890'
         }
       },
 
