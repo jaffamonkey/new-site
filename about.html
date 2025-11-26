@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me – Testing & Quality Engineering</title>
+    <title>About Me – Behaviour-Driven Quality</title>
     <meta property="og:title" content="Testing AI">
     <meta property="og:description" content="Conversational AI And Accessibility">
     <meta property="og:image" content="https://jaffamonkey.sbs/images/conversational-ai-testing4.png">
@@ -20,13 +20,14 @@
     <!-- Navigation -->
     <nav
         class="fixed top-0 left-0 w-full bg-macchiato-mantle/80 dark:bg-frappe-mantle/80 backdrop-blur-sm border-b border-macchiato-surface1 dark:border-frappe-surface1 z-50 transition-colors duration-300">
+
         <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
 
             <!-- Logo -->
             <a href="index.html"
                 class="flex items-center gap-3 text-macchiato-lavender dark:text-frappe-lavender font-semibold text-lg">
                 <img src="images/logo.png" alt="Logo" class="w-8 h-8" />
-                <span>Testing</span>
+                <span>Behaviour-Driven Quality</span>
             </a>
 
             <div class="flex items-center gap-3">
@@ -40,33 +41,15 @@
 
                 <!-- Mobile burger -->
                 <button id="burger" type="button"
-                    class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-macchiato-surface1 dark:border-frappe-surface1 transition-colors duration-300"
+                    class="sm:hidden flex flex-col justify-center gap-1.5 w-9 h-9 px-1.5 rounded-md border border-frappe-surface1 transition-colors duration-300"
                     aria-label="Toggle navigation">
-
-                    <!-- <span
-            class="burger-line h-0.5 w-full rounded bg-macchiato-text dark:bg-frappe-lavender shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all duration-300"></span>
-          <span
-            class="burger-line h-0.5 w-full rounded bg-macchiato-text dark:bg-frappe-lavender shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all duration-300"></span>
-          <span
-            class="burger-line h-0.5 w-full rounded bg-macchiato-text dark:bg-frappe-lavender shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all duration-300"></span>
-        </button> -->
-
-                    <span class="burger-line h-0.5 w-full rounded 
-           bg-frappe-text 
-           shadow-[0_0_2px_rgba(0,0,0,0.25)] 
-           transition-all duration-300"></span>
-
-                    <span class="burger-line h-0.5 w-full rounded 
-           bg-frappe-text 
-           shadow-[0_0_2px_rgba(0,0,0,0.25)] 
-           transition-all duration-300"></span>
-
-                    <span class="burger-line h-0.5 w-full rounded 
-           bg-frappe-text 
-           shadow-[0_0_2px_rgba(0,0,0,0.25)] 
-           transition-all duration-300"></span>
+                    <span
+                        class="burger-line h-0.5 w-full rounded bg-frappe-text shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all duration-300"></span>
+                    <span
+                        class="burger-line h-0.5 w-full rounded bg-frappe-text shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all duration-300"></span>
+                    <span
+                        class="burger-line h-0.5 w-full rounded bg-frappe-text shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all duration-300"></span>
                 </button>
-
 
                 <!-- Desktop menu -->
                 <div class="hidden sm:flex items-center gap-6">
@@ -74,6 +57,11 @@
                     <a href="about.html"
                         class="text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
                         About
+                    </a>
+
+                    <a href="testing.html"
+                        class="text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
+                        Testing
                     </a>
 
                     <a href="accessibility.html"
@@ -90,34 +78,30 @@
                         class="text-macchiato-subtext1 dark:text-frappe-subtext1 hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
                         Contact
                     </a>
+
                 </div>
             </div>
         </div>
 
         <!-- Mobile dropdown menu -->
         <div id="mobile-menu" class="hidden flex flex-col space-y-2 bg-macchiato-mantle dark:bg-frappe-mantle 
-         border-t border-macchiato-surface1 dark:border-frappe-surface1 
-         sm:hidden transition-all duration-300 origin-top px-4 py-3">
+            border-t border-macchiato-surface1 dark:border-frappe-surface1 
+            sm:hidden transition-all duration-300 origin-top px-4 py-3">
 
             <a href="about.html" class="block py-2 text-macchiato-subtext1 dark:text-frappe-subtext1 
-            hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
-                About
-            </a>
+                hover:text-macchiato-lavender dark:hover:text-frappe-lavender">About</a>
+
+            <a href="testing.html" class="block py-2 text-macchiato-subtext1 dark:text-frappe-subtext1 
+                hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Testing</a>
 
             <a href="accessibility.html" class="block py-2 text-macchiato-subtext1 dark:text-frappe-subtext1 
-            hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
-                Accessibility Audit
-            </a>
+                hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Accessibility Audit</a>
 
             <a href="index.html" class="block py-2 text-macchiato-subtext1 dark:text-frappe-subtext1 
-            hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
-                Conversational AI
-            </a>
+                hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Conversational AI</a>
 
             <a href="#contact" class="block py-2 text-macchiato-subtext1 dark:text-frappe-subtext1 
-            hover:text-macchiato-lavender dark:hover:text-frappe-lavender">
-                Contact
-            </a>
+                hover:text-macchiato-lavender dark:hover:text-frappe-lavender">Contact</a>
         </div>
     </nav>
 
